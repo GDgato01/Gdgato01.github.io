@@ -1,0 +1,1312 @@
+<!doctype html>
+
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Plan Sanitario Apicultura</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/handsontable@12.1.0/dist/handsontable.full.min.css"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="barra-superior">
+      <button
+        class="boton botonA"
+        onclick="mostrarSeccion('seccionA')"
+        disabled
+      >
+        <img
+          src="registro.png"
+          alt="Ícono"
+          style="width: 20px; height: 20px; vertical-align: middle"
+        />
+      </button>
+      <button
+        class="boton botonB"
+        onclick="mostrarSeccion('seccionB')"
+        disabled
+      >
+        <img
+          src="frasco.png"
+          alt="Ícono"
+          style="width: 20px; height: 20px; vertical-align: middle"
+        />
+      </button>
+
+      <button
+        class="boton botonC"
+        onclick="mostrarSeccion('seccionC')"
+        disabled
+      >
+	  <img
+          src="clima.png"
+          alt="Ícono"
+          style="width: 20px; height: 20px; vertical-align: middle"
+        />
+      </button>
+      <button
+        class="boton botonD"
+        onclick="mostrarSeccion('seccionD')"
+        disabled
+      >
+	  <img
+          src="nutrición.png"
+          alt="Ícono"
+          style="width: 20px; height: 20px; vertical-align: middle"
+        />
+      </button>
+    </div>
+    <div class="contenido">
+      <div id="inicio" class="seccion visible">
+        <div id="map"></div>
+        <div class="texto">
+          <h1>plan sanitario apicultura</h1>
+          <h2>Objetivo</h2>
+          <p>
+            El principal objetivo de este plan es proporcionar medidas para
+            prevenir, controlar y erradicar enfermedades y parásitos que puedan
+            amenazar la salud de las abejas y, en consecuencia, la producción de
+            miel. A través de la adopción de prácticas sanitarias adecuadas y la
+            aplicación de acciones preventivas, el Plan de Sanidad garantizará
+            la viabilidad y la sostenibilidad de la actividad apícola,
+            asegurando la salud de las colonias y la calidad del producto final.
+          </p>
+          <p>
+            &copy; 2024 Dilal Estenio Villa Urrego. Todos los derechos
+            reservados.
+          </p>
+        </div>
+      </div>
+
+      <div id="apiario" class="seccion">
+        <div class="texto">
+          <h1>Finca</h1>
+          <label for="menuApiario">selecciona tu finca</label>
+          <select id="menuApiario">
+            <option value="opcion0">Sin Determinar</option>
+            <option value="opcion1">IEAU</option>
+            <option value="opcion2">SENA</option>
+          </select>
+        </div>
+      </div>
+
+      <div id="seccion3" class="seccion">
+        <div class="texto">
+          <h1>Índice</h1>
+          <ul>
+            <li><a href="#loque-americana">Loque Americana</a></li>
+            <li><a href="#loque-europea">Loque Europea</a></li>
+            <li><a href="#varroa-destructor">Varroa Destructor</a></li>
+            <li><a href="#nosema">Nosema</a></li>
+            <li>
+              <a href="#medicamentos">Medicamentos en la Apicultura de Miel</a>
+            </li>
+          </ul>
+
+          <h1 id="loque-americana">Loque Americana</h1>
+          <h2><strong>Síntomas</strong></h2>
+          <p>
+            <strong>Pupas muertas:</strong> Las larvas infectadas mueren después
+            de ser operculadas (selladas), lo que deja celdas con tapas hundidas
+            o perforadas.
+          </p>
+          <p>
+            <strong>Contenido viscoso:</strong> Al abrir las celdas afectadas,
+            el cuerpo de la larva puede verse descompuesto, formando una masa
+            marrón viscosa, que al tirar con un palillo produce un "hilo" largo.
+          </p>
+          <p>
+            <strong>Olor desagradable:</strong> Las colmenas infectadas
+            desarrollan un olor pútrido característico.
+          </p>
+          <p>
+            <strong>Escamas secas:</strong> En fases avanzadas, las larvas se
+            secan, formando escamas negras que se adhieren al fondo de las
+            celdas.
+          </p>
+
+          <h2><strong>Tratamientos</strong></h2>
+          <p>
+            <strong>No hay tratamiento efectivo:</strong> Una vez diagnosticada,
+            la colmena debe ser destruida para evitar la propagación.
+          </p>
+          <p>
+            <strong>Desinfección de colmenas:</strong> Limpiar y desinfectar
+            equipos, colmenas y utensilios para prevenir la reinfección.
+          </p>
+          <p>
+            <strong>Reemplazo de colmenas:</strong> Introducir nuevas colonias
+            en colmenas desinfectadas, asegurando que sean de fuentes sanas.
+          </p>
+          <p>
+            <strong>Control de movimiento:</strong> Evitar el movimiento de
+            abejas o equipos entre colmenas para prevenir la dispersión de la
+            bacteria.
+          </p>
+          <p>
+            <strong>Educación y monitoreo:</strong> Capacitar a los apicultores
+            sobre el diagnóstico y prevención de la Loque Americana.
+          </p>
+
+          <h1 id="loque-europea">Loque Europea</h1>
+          <h2><strong>Síntomas</strong></h2>
+          <p>
+            <strong>Larvas retorcidas:</strong> Las larvas infectadas adoptan
+            una posición irregular dentro de la celda, a menudo retorcidas o
+            desplazadas de su posición normal.
+          </p>
+          <p>
+            <strong>Coloración anormal:</strong> Las larvas cambian de color,
+            pasando de blanco brillante a un tono amarillento, marrón o gris.
+          </p>
+          <p>
+            <strong>Larvas muertas antes de ser operculadas:</strong> A
+            diferencia de la Loque Americana, la Loque Europea afecta
+            principalmente a las larvas antes de que sean operculadas.
+          </p>
+          <p>
+            <strong>Olor agrio:</strong> Las colmenas pueden tener un olor agrio
+            o fermentado, menos fuerte que en la Loque Americana.
+          </p>
+          <p>
+            <strong>Desintegración de las larvas:</strong> Las larvas muertas se
+            descomponen en una masa acuosa y pegajosa.
+          </p>
+
+          <h2><strong>Tratamientos</strong></h2>
+          <p>
+            <strong>Antibióticos:</strong> La oxitetraciclina es el tratamiento
+            comúnmente utilizado. Se administra a través del jarabe de azúcar.
+          </p>
+          <p>
+            <strong>Desinfección de colmenas:</strong> Limpiar y desinfectar
+            colmenas, herramientas y equipos.
+          </p>
+          <p>
+            <strong>Reemplazo de cría:</strong> Sustituir las larvas y crías
+            infectadas, asegurando que sean de fuentes sanas.
+          </p>
+          <p>
+            <strong>Control de alimentación:</strong> Proporcionar suplementos
+            vitamínicos y alimentación adecuada para fortalecer la colonia.
+          </p>
+          <p>
+            <strong>Monitoreo constante:</strong> Inspeccionar regularmente las
+            colmenas para detectar signos de infección y actuar rápidamente.
+          </p>
+
+          <h1 id="varroa-destructor">Varroa Destructor</h1>
+          <h2><strong>Síntomas</strong></h2>
+          <p>
+            <strong>Presencia de ácaros:</strong> Ácaros visibles a simple
+            vista, de forma ovalada y color marrón rojizo, adheridos al cuerpo
+            de las abejas adultas o en las celdas de cría.
+          </p>
+          <p>
+            <strong>Crías deformadas:</strong> Las abejas nacen con
+            malformaciones, como alas deformes o cuerpos más pequeños debido a
+            la alimentación del ácaro en la fase larval.
+          </p>
+          <p>
+            <strong>Pérdida de peso:</strong> Las abejas afectadas muestran un
+            desarrollo corporal reducido y menor peso al nacer.
+          </p>
+          <p>
+            <strong>Colmena debilitada:</strong> Disminución de la población
+            debido a la muerte de crías y abejas adultas.
+          </p>
+          <p>
+            <strong>Comportamiento anormal:</strong> Las abejas afectadas pueden
+            mostrar mayor inquietud, vuelo errático o incapacidad para volar.
+          </p>
+
+          <h2><strong>Tratamientos</strong></h2>
+          <p>
+            <strong>Ácido oxálico:</strong> Aplicado mediante vaporización o
+            goteo para eliminar ácaros en abejas adultas.
+          </p>
+          <p>
+            <strong>Ácido fórmico:</strong> Utilizado en tiras o gel para
+            eliminar ácaros tanto en abejas adultas como en cría sellada.
+          </p>
+          <p>
+            <strong>Amitraz:</strong> Se aplica en tiras impregnadas para
+            controlar la infestación de ácaros.
+          </p>
+          <p>
+            <strong>Tymol:</strong> Producto natural en gel o tiras para
+            eliminar los ácaros.
+          </p>
+          <p>
+            <strong>Rotación de tratamientos:</strong> Alternar entre diferentes
+            tratamientos para evitar que los ácaros desarrollen resistencia.
+          </p>
+
+          <h1 id="nosema">Nosema</h1>
+          <h2><strong>Síntomas</strong></h2>
+          <p>
+            <strong>Diarrea:</strong> Manchas fecales amarillentas o marrones
+            alrededor de la entrada de la colmena y en los panales.
+          </p>
+          <p>
+            <strong>Abejas letárgicas:</strong> Abejas afectadas muestran
+            debilidad, fatiga e incapacidad para volar.
+          </p>
+          <p>
+            <strong>Abdomen hinchado:</strong> Las abejas infectadas pueden
+            tener el abdomen hinchado y dilatado, lo que dificulta su
+            movimiento.
+          </p>
+          <p>
+            <strong>Pérdida de población:</strong> La colmena experimenta una
+            disminución en la cantidad de abejas adultas.
+          </p>
+
+          <h2><strong>Tratamientos</strong></h2>
+          <p>
+            <strong>Fumagilina:</strong> Antibiótico mezclado con jarabe de
+            azúcar para tratar infecciones por Nosema.
+          </p>
+          <p>
+            <strong>Mejoras en la higiene:</strong> Mantener colmenas limpias y
+            ventiladas para reducir la propagación.
+          </p>
+          <p>
+            <strong>Alimentación saludable:</strong> Proporcionar alimentos y
+            suplementos vitamínicos para fortalecer la salud de las abejas.
+          </p>
+          <p>
+            <strong>Control de la humedad:</strong> Mantener condiciones de
+            humedad adecuadas en las colmenas.
+          </p>
+
+          <h1 id="medicamentos">Medicamentos en la Apicultura de Miel</h1>
+          <h2><strong>1. Fumagilina</strong></h2>
+          <p>
+            <strong>Función:</strong> Antibiótico utilizado para tratar
+            infecciones por Nosema.
+          </p>
+          <p>
+            <strong>Modo de uso:</strong> Mezclado con jarabe de azúcar, se
+            administra durante los periodos de alimentación suplementaria.
+          </p>
+          <p><strong>Dosis:</strong> 25 mg por litro de jarabe de azúcar.</p>
+
+          <h2><strong>2. Ácido Oxálico</strong></h2>
+          <p>
+            <strong>Función:</strong> Tratamiento eficaz contra *Varroa
+            destructor*.
+          </p>
+          <p>
+            <strong>Modo de uso:</strong> Aplicado mediante vaporización o goteo
+            en las abejas adultas.
+          </p>
+          <p>
+            <strong>Dosis:</strong> 3-5 ml por cuadro, repetido cada 7 días
+            durante tres semanas.
+          </p>
+
+          <h2><strong>3. Ácido Fórmico</strong></h2>
+          <p>
+            <strong>Función:</strong> Eficaz contra ácaros en cría operculada.
+          </p>
+          <p>
+            <strong>Modo de uso:</strong> Se aplica en tiras o gel dentro de la
+            colmena.
+          </p>
+          <p>
+            <strong>Dosis:</strong> 10-15 ml por colmena, dependiendo del
+            tamaño.
+          </p>
+
+          <h2><strong>4. Oxitetraciclina</strong></h2>
+          <p>
+            <strong>Función:</strong> Antibiótico utilizado para tratar la Loque
+            Europea.
+          </p>
+          <p>
+            <strong>Modo de uso:</strong> Administrado con jarabe de azúcar.
+          </p>
+          <p>
+            <strong>Dosis:</strong> 200 mg por litro de jarabe de azúcar,
+            aplicado dos veces al año.
+          </p>
+
+          <h2><strong>5. Amitraz</strong></h2>
+          <p>
+            <strong>Función:</strong> Tratamiento químico para controlar *Varroa
+            destructor*.
+          </p>
+          <p>
+            <strong>Modo de uso:</strong> Aplicado en tiras impregnadas durante
+            varias semanas.
+          </p>
+          <p>
+            <strong>Dosis:</strong> 1 tira por cada 5 cuadros de cría, aplicada
+            cada 2 meses.
+          </p>
+
+          <h2><strong>6. Tymol</strong></h2>
+          <p>
+            <strong>Función:</strong> Producto natural para el control de
+            ácaros.
+          </p>
+          <p>
+            <strong>Modo de uso:</strong> Aplicado en gel o tiras dentro de la
+            colmena.
+          </p>
+          <p>
+            <strong>Dosis:</strong> 2 tiras por colmena, con una duración de 3
+            semanas.
+          </p>
+        </div>
+      </div>
+
+      <div id="seccion4" class="seccion">
+        <div class="texto">
+          <h1>Índice</h1>
+          <ul>
+            <li><a href="#instalaciones">Instalaciones</a></li>
+            <li>
+              <a href="#manejo-instalaciones">Manejo de las Instalaciones</a>
+            </li>
+            <li><a href="#manejo-abejas">Manejo de las Abejas</a></li>
+            <li><a href="#labores-culturales">Labores Culturales</a></li>
+            <li>
+              <a href="#equipos-apicultura">Equipos Usados en Apicultura</a>
+            </li>
+            <li><a href="#recogida-miel">Cómo se Recoge la Miel</a></li>
+          </ul>
+
+          <h1 id="instalaciones">Instalaciones</h1>
+          <p>
+            Las instalaciones apícolas son cruciales para el éxito en la
+            producción de miel. Deben estar ubicadas en zonas donde haya
+            suficiente flora que provea néctar y polen, y deben cumplir con
+            ciertos requisitos específicos para la salud de las abejas.
+          </p>
+
+          <h2><strong>1. Medidas</strong></h2>
+          <p>
+            Las colmenas deben estar diseñadas y colocadas siguiendo ciertas
+            medidas estándar para asegurar un manejo eficiente y la comodidad de
+            las abejas.
+          </p>
+          <ul>
+            <li>
+              <strong>Altura del suelo:</strong> Las colmenas deben colocarse al
+              menos a 30-50 cm del suelo.
+            </li>
+            <li>
+              <strong>Distancia entre colmenas:</strong> Recomendado de 1.5 a 2
+              metros.
+            </li>
+            <li>
+              <strong>Área mínima por colmena:</strong> Al menos 4-5 metros
+              cuadrados por colmena.
+            </li>
+            <li>
+              <strong>Dimensiones estándar:</strong> Las colmenas tipo
+              Langstroth deben tener dimensiones de **40 cm de ancho, 20 cm de
+              profundidad** y una altura que puede variar dependiendo de las
+              alzas.
+            </li>
+          </ul>
+
+          <h2><strong>2. Tipo de Panales</strong></h2>
+          <p>
+            El tipo de panales utilizado influye directamente en la producción y
+            en el manejo de las abejas.
+          </p>
+          <ul>
+            <li>
+              <strong>Panales móviles:</strong> Se recomienda el uso de panales
+              móviles (Langstroth).
+            </li>
+            <li>
+              <strong>Panales de cera estampada:</strong> Ideal para acelerar la
+              construcción de panales por parte de las abejas.
+            </li>
+          </ul>
+
+          <h2><strong>3. Densidades</strong></h2>
+          <p>
+            La densidad de colmenas en un apiario depende de la disponibilidad
+            de recursos naturales.
+          </p>
+          <ul>
+            <li>
+              <strong>Densidad óptima:</strong> 3-5 colmenas por hectárea.
+            </li>
+            <li>
+              <strong>Rotación del sitio:</strong> Rotar las colmenas cada 2-3
+              años.
+            </li>
+          </ul>
+
+          <h2><strong>4. Señalizaciones de Seguridad</strong></h2>
+          <p>
+            Para garantizar la seguridad tanto de los trabajadores como de las
+            personas cercanas al apiario:
+          </p>
+          <ul>
+            <li>
+              <strong>Letreros de advertencia:</strong> Se deben colocar
+              letreros visibles en la entrada del apiario.
+            </li>
+            <li>
+              <strong>Zonas restringidas:</strong> Delimitar claramente las
+              áreas de acceso restringido.
+            </li>
+          </ul>
+
+          <h2><strong>5. Ventilación</strong></h2>
+          <p>
+            Una ventilación adecuada es clave para la salud de las colmenas.
+          </p>
+          <ul>
+            <li>
+              <strong>Ventanas de ventilación:</strong> Se recomienda tener
+              pequeñas aberturas en la tapa superior.
+            </li>
+            <li>
+              <strong>Evitar excesiva exposición al sol:</strong> Las colmenas
+              no deben estar directamente expuestas al sol durante todo el día.
+            </li>
+          </ul>
+
+          <h2><strong>6. Ubicación</strong></h2>
+          <p>
+            La ubicación del apiario es un factor crucial para la producción de
+            miel.
+          </p>
+          <ul>
+            <li>
+              <strong>Cerca de fuentes de néctar:</strong> Situar las colmenas
+              cerca de flores.
+            </li>
+            <li>
+              <strong>Protección contra viento:</strong> Colmenas en lugares
+              protegidos de vientos fuertes.
+            </li>
+            <li>
+              <strong>Acceso a agua:</strong> El apiario debe tener acceso a
+              agua limpia.
+            </li>
+          </ul>
+
+          <h2><strong>7. Acceso y Facilidades</strong></h2>
+          <p>
+            Un apiario bien diseñado también debe considerar la facilidad de
+            acceso para los apicultores.
+          </p>
+          <ul>
+            <li>
+              <strong>Caminos de acceso:</strong> Deben existir caminos
+              accesibles hasta el apiario.
+            </li>
+            <li>
+              <strong>Protección del entorno:</strong> Mantener vegetación
+              controlada alrededor de las colmenas.
+            </li>
+          </ul>
+
+          <h1 id="manejo-instalaciones">Manejo de las Instalaciones</h1>
+          <p>
+            El manejo adecuado de las instalaciones incluye diversos aspectos
+            para garantizar un ambiente seguro y adecuado para las colmenas.
+          </p>
+
+          <h2><strong>1. Sombra</strong></h2>
+          <p>
+            En climas cálidos como Urabá, la sombra es crucial para evitar el
+            sobrecalentamiento de las colmenas.
+          </p>
+          <ul>
+            <li>
+              <strong>Importancia de la sombra:</strong> Protege a las abejas
+              del calor extremo.
+            </li>
+            <li>
+              <strong>Ubicación de las colmenas:</strong> Colocar las colmenas
+              bajo árboles o estructuras que ofrezcan sombra parcial.
+            </li>
+            <li>
+              <strong>Diseño de estructuras:</strong> Construir techos o toldos
+              para agregar sombra adicional si es necesario.
+            </li>
+          </ul>
+
+          <h2><strong>2. Clima</strong></h2>
+          <p>
+            El clima local afecta tanto a las abejas como a las prácticas de
+            manejo.
+          </p>
+          <ul>
+            <li>
+              <strong>Monitoreo de temperaturas:</strong> Temperaturas ideales
+              entre 32°C y 35°C.
+            </li>
+            <li>
+              <strong>Prevención de la humedad:</strong> Las colmenas deben
+              estar bien ventiladas para evitar acumulación de humedad.
+            </li>
+            <li>
+              <strong>Adaptación a cambios climáticos:</strong> Ajustar las
+              prácticas de manejo según el cambio climático.
+            </li>
+          </ul>
+
+          <h2><strong>3. Ventilación</strong></h2>
+          <p>
+            Una buena ventilación es clave para prevenir la acumulación de
+            humedad y mantener una temperatura adecuada dentro de la colmena.
+          </p>
+          <ul>
+            <li>
+              <strong>Diseño de ventilación:</strong> Colmenas con aberturas o
+              rejillas para el flujo de aire.
+            </li>
+            <li>
+              <strong>Uso de ventanas:</strong> Algunas colmenas permiten
+              controlar la ventilación abriendo o cerrando ventanas.
+            </li>
+            <li>
+              <strong>Ubicación estratégica:</strong> Evitar zonas con aire
+              estancado o sin circulación.
+            </li>
+          </ul>
+
+          <h2><strong>4. Seguridad de las Colmenas</strong></h2>
+          <p>
+            La seguridad de las colmenas es fundamental para proteger tanto a
+            las abejas como a las instalaciones.
+          </p>
+          <ul>
+            <li>
+              <strong>Estructuras estables:</strong> Las colmenas deben estar
+              bien montadas y aseguradas para evitar daños por vientos o caídas.
+            </li>
+            <li>
+              <strong>Control de plagas:</strong> Implementar programas de
+              control de plagas para proteger las colmenas de hormigas,
+              roedores, entre otros.
+            </li>
+            <li>
+              <strong>Inspecciones regulares:</strong> Revisar periódicamente
+              las colmenas para detectar cualquier daño o problema.
+            </li>
+          </ul>
+
+          <h2><strong>5. Seguridad de las Personas</strong></h2>
+          <p>
+            Es esencial garantizar la seguridad de los trabajadores y visitantes
+            del apiario.
+          </p>
+          <ul>
+            <li>
+              <strong>Equipamiento de protección:</strong> Todos los apicultores
+              deben usar trajes, guantes y velos protectores.
+            </li>
+            <li>
+              <strong>Capacitación en manejo seguro:</strong> Los apicultores
+              deben ser capacitados en las mejores prácticas para el manejo de
+              las colmenas.
+            </li>
+            <li>
+              <strong>Señalización de advertencia:</strong> Colocar letreros
+              visibles para advertir sobre la presencia de abejas.
+            </li>
+            <li>
+              <strong>Protocolos de emergencia:</strong> Tener kits de primeros
+              auxilios y procedimientos en caso de picaduras o reacciones
+              alérgicas.
+            </li>
+          </ul>
+
+          <h1 id="manejo-abejas">Manejo de las Abejas</h1>
+          <p>
+            El manejo de las abejas es un proceso continuo que requiere atención
+            y cuidado. A continuación, se describen las mejores prácticas para
+            manejar las abejas en diferentes situaciones.
+          </p>
+
+          <h2><strong>1. Inspección de Colmenas</strong></h2>
+          <p>
+            La inspección regular de las colmenas es fundamental para mantener
+            la salud y productividad de las abejas.
+          </p>
+          <ul>
+            <li>
+              <strong>Frecuencia de Inspección:</strong> Cada 7 a 14 días,
+              aumentando en épocas críticas.
+            </li>
+            <li>
+              <strong>Condiciones Climáticas:</strong> Realizar inspecciones en
+              días soleados y frescos.
+            </li>
+            <li>
+              <strong>Uso de Ahumador:</strong> Calmar a las abejas antes de
+              abrir las colmenas.
+            </li>
+            <li>
+              <strong>Qué Observar:</strong> Salud de la reina, presencia de
+              crías y signos de enfermedades.
+            </li>
+          </ul>
+
+          <h2><strong>2. Prevención y Manejo de Enjambrazón</strong></h2>
+          <p>
+            La enjambrazón es un proceso natural que puede disminuir la
+            producción de miel.
+          </p>
+          <ul>
+            <li>
+              <strong>Prevención de la Enjambrazón:</strong> Ampliar el espacio
+              en la colmena y dividir colonias grandes.
+            </li>
+            <li>
+              <strong>Identificación de Signos:</strong> Observación de celdas
+              de reina y comportamiento inquieto de las abejas.
+            </li>
+          </ul>
+
+          <h2><strong>3. Manejo en Épocas de Escasez</strong></h2>
+          <p>
+            Proporcionar alimentación suplementaria durante periodos de baja
+            disponibilidad de néctar.
+          </p>
+          <ul>
+            <li>
+              <strong>Alimentación con Jarabe de Azúcar:</strong> Preparar un
+              jarabe de azúcar en proporción de 2:1.
+            </li>
+            <li>
+              <strong>Suplementos Proteicos:</strong> Ofrecer tortas de polen o
+              sustitutos de polen.
+            </li>
+            <li>
+              <strong>Monitoreo de la Población:</strong> Ajustar el tamaño de
+              la colonia si es necesario.
+            </li>
+          </ul>
+
+          <h2><strong>4. Manejo de Enfermedades y Parásitos</strong></h2>
+          <p>
+            El manejo de enfermedades y parásitos es crucial para la
+            supervivencia de la colonia.
+          </p>
+          <ul>
+            <li>
+              <strong>Control del Varroa Destructor:</strong> Monitoreo regular
+              y tratamientos con ácido oxálico o fórmico.
+            </li>
+            <li>
+              <strong>Prevención de Loque Americana y Europea:</strong>
+              Desinfección de colmenas y reemplazo de colmenas afectadas.
+            </li>
+            <li>
+              <strong>Uso de Antibióticos:</strong> Administrar antibióticos
+              bajo supervisión experta.
+            </li>
+          </ul>
+
+          <h2><strong>5. Manejo de la Cría de Reinas</strong></h2>
+          <p>
+            La cría de reinas es esencial para garantizar la continuidad y
+            productividad de las colonias.
+          </p>
+          <ul>
+            <li>
+              <strong>Reemplazo de Reinas:</strong> Reemplazar la reina cada 1-2
+              años.
+            </li>
+            <li>
+              <strong>Crianza de Reinas Artificial:</strong> Criar reinas
+              mediante larvas jóvenes en celdas de reina.
+            </li>
+          </ul>
+
+          <h2><strong>6. Cosecha de Miel</strong></h2>
+          <p>
+            Manejar adecuadamente las abejas durante la cosecha de miel es
+            esencial.
+          </p>
+          <ul>
+            <li>
+              <strong>Momento Adecuado:</strong> Cosechar cuando los panales
+              están operculados.
+            </li>
+            <li>
+              <strong>Uso del Ahumador:</strong> Calmar a las abejas durante la
+              recolección.
+            </li>
+            <li>
+              <strong>Manejo Cuidadoso:</strong> Evitar aplastar abejas al
+              retirar los cuadros.
+            </li>
+          </ul>
+
+          <h1 id="labores-culturales">Labores Culturales</h1>
+          <p>
+            Las labores culturales son las actividades que los apicultores
+            realizan para garantizar el bienestar de las colonias de abejas y
+            optimizar la producción de miel. Estas actividades incluyen:
+          </p>
+
+          <h2><strong>1. Inspección de Colonias</strong></h2>
+          <p>
+            Inspección regular para evaluar la salud de las abejas, la actividad
+            de la reina y la presencia de enfermedades o parásitos.
+          </p>
+
+          <h2><strong>2. Manejo de la Cría de Reinas</strong></h2>
+          <p>Crianza, selección y reemplazo de reinas en las colmenas.</p>
+
+          <h2><strong>3. Control de Enfermedades y Parásitos</strong></h2>
+          <p>
+            Implementar medidas preventivas y tratamientos para controlar
+            enfermedades y parásitos.
+          </p>
+
+          <h2><strong>4. Cosecha de Miel</strong></h2>
+          <p>
+            Proceso de recolección de miel en momentos adecuados para asegurar
+            la calidad.
+          </p>
+
+          <h2><strong>5. Manejo de la Polinización</strong></h2>
+          <p>
+            Asegurarse de que las colonias estén disponibles durante las
+            temporadas de floración.
+          </p>
+
+          <h2><strong>6. Recolección de Productos de la Colmena</strong></h2>
+          <p>Recolección de otros productos como cera y propóleos.</p>
+
+          <h2><strong>7. Mantenimiento de Equipos y Colmenas</strong></h2>
+          <p>
+            Limpieza, reparación y desinfección de colmenas y herramientas
+            regularmente.
+          </p>
+
+          <h1 id="equipos-apicultura">Equipos Usados en Apicultura</h1>
+          <p>
+            El uso del equipo adecuado es esencial para un manejo eficiente y
+            seguro en la apicultura. Aquí se presenta un resumen de los equipos
+            más comunes:
+          </p>
+
+          <h2><strong>1. Colmenas</strong></h2>
+          <p>
+            Estructuras donde viven las abejas. Pueden ser de diferentes tipos,
+            como Langstroth, Top Bar o Warre.
+          </p>
+
+          <h2><strong>2. Ahumador</strong></h2>
+          <p>Dispositivo que genera humo para calmar a las abejas.</p>
+
+          <h2><strong>3. Traje de Apicultor</strong></h2>
+          <p>
+            Vestimenta protectora que incluye un sombrero con velo, guantes y un
+            traje completo.
+          </p>
+
+          <h2><strong>4. Herramientas de Inspección</strong></h2>
+          <p>Incluyen palancas, cuchillos y espátulas.</p>
+
+          <h2><strong>5. Extractor de Miel</strong></h2>
+          <p>
+            Máquina utilizada para extraer miel de los panales mediante fuerza
+            centrífuga.
+          </p>
+
+          <h2><strong>6. Desoperculador</strong></h2>
+          <p>
+            Herramienta utilizada para quitar las tapas de cera de las celdas
+            llenas de miel.
+          </p>
+
+          <h2><strong>7. Envases para Miel</strong></h2>
+          <p>Tarros o frascos de vidrio o plástico para almacenar la miel.</p>
+
+          <h2><strong>8. Equipos de Monitoreo</strong></h2>
+          <p>
+            Incluyen trampas para Varroa y dispositivos de medición de
+            temperatura y humedad.
+          </p>
+
+          <h2><strong>9. Cajas de Cría de Reinas</strong></h2>
+          <p>Estructuras especiales donde se crían las reinas.</p>
+
+          <h2><strong>10. Bebederos</strong></h2>
+          <p>Fuentes de agua diseñadas para las abejas.</p>
+
+          <h1 id="recogida-miel">Cómo se Recoge la Miel</h1>
+          <p>
+            La recolección de miel debe llevarse a cabo en el momento adecuado,
+            es decir, cuando los panales están operculados, lo que indica que la
+            miel está lista para ser cosechada. Este proceso es crucial para
+            garantizar la calidad del producto final.
+          </p>
+
+          <h2><strong>1. Momentos Adecuados para la Recolección</strong></h2>
+          <p>
+            La recolección de miel debe realizarse en el momento óptimo para
+            asegurar la calidad del producto final y minimizar el estrés en las
+            abejas.
+          </p>
+          <ul>
+            <li>
+              <strong>Miel Operculada:</strong> Cosechar solo cuando los panales
+              están completamente operculados.
+            </li>
+            <li>
+              <strong>Condiciones Climáticas:</strong> Preferible en días
+              soleados y secos.
+            </li>
+            <li>
+              <strong>Hora del Día:</strong> Realizar en la mañana o tarde,
+              evitando la actividad intensa de las abejas.
+            </li>
+          </ul>
+
+          <h2><strong>2. Preparación Antes de la Recolección</strong></h2>
+          <p>
+            Antes de comenzar el proceso de recolección, es importante
+            prepararse adecuadamente.
+          </p>
+          <ul>
+            <li>
+              <strong>Equipamiento:</strong> Tener a mano ahumador, traje de
+              apicultor, cuchillo, extractor de miel, y envases limpios.
+            </li>
+            <li>
+              <strong>Verificación de Colmenas:</strong> Asegurarse de que las
+              colmenas estén saludables.
+            </li>
+          </ul>
+
+          <h2><strong>3. Proceso de Recolección</strong></h2>
+          <p>El proceso de recolección de miel se realiza en varios pasos:</p>
+          <ol>
+            <li>
+              <strong>Uso del Ahumador:</strong> Calmar a las abejas aplicando
+              humo en la entrada de la colmena.
+            </li>
+            <li>
+              <strong>Retiro de Cuadros:</strong> Abrir la colmena y retirar
+              cuidadosamente los cuadros operculados.
+            </li>
+            <li>
+              <strong>Desoperculación:</strong> Quitar las tapas de cera de las
+              celdas llenas de miel.
+            </li>
+            <li>
+              <strong>Extracción de Miel:</strong> Colocar los cuadros en el
+              extractor y extraer la miel.
+            </li>
+            <li>
+              <strong>Filtrado de la Miel:</strong> Filtrar la miel para
+              eliminar impurezas.
+            </li>
+            <li>
+              <strong>Almacenamiento:</strong> Almacenar la miel en envases
+              limpios y etiquetados.
+            </li>
+          </ol>
+
+          <h2><strong>4. Consideraciones Finales</strong></h2>
+          <p>
+            Después de la recolección, es importante realizar un control de
+            calidad y revisar las colmenas para asegurarse de que no haya daños
+            y que la salud de las colonias esté garantizada. Además, siempre es
+            fundamental dejar suficiente miel en las colmenas para alimentar a
+            las abejas.
+          </p>
+        </div>
+      </div>
+
+      <div id="seccion5" class="seccion">
+        <div class="texto">
+          <h1>Índice</h1>
+          <ul>
+            <li>
+              <a href="#requerimientos-nutricionales"
+                >Requerimientos Nutricionales</a
+              >
+            </li>
+            <li>
+              <a href="#parametros-productivos">Parámetros Productivos</a>
+            </li>
+            <li>
+              <a href="#parametros-reproductivos">Parámetros Reproductivos</a>
+            </li>
+          </ul>
+
+          <h1 id="requerimientos-nutricionales">
+            Requerimientos Nutricionales
+          </h1>
+          <p>
+            Las abejas requieren una dieta equilibrada para mantener su salud y
+            productividad. A continuación se detallan los principales nutrientes
+            que necesitan y sus funciones:
+          </p>
+
+          <h2><strong>Categorías de Requerimientos Nutricionales</strong></h2>
+          <p>
+            Los requerimientos nutricionales de las abejas se pueden clasificar
+            en las siguientes categorías:
+          </p>
+
+          <h3>1. Carbohidratos</h3>
+          <p>
+            Los carbohidratos son la principal fuente de energía para las
+            abejas. Los néctares y azúcares proporcionan la energía necesaria
+            para el vuelo, la recolección y las actividades diarias.
+          </p>
+          <ul>
+            <li>
+              <strong>Néctar:</strong> Debe tener un contenido de azúcar entre
+              **15-30%**.
+            </li>
+            <li>
+              <strong>Jarabe de Azúcar:</strong> Utilizado como suplemento; se
+              recomienda en proporciones de **2:1** (azúcar:agua) en primavera.
+            </li>
+          </ul>
+
+          <h3>2. Proteínas</h3>
+          <p>
+            Las proteínas son esenciales para el crecimiento y desarrollo de las
+            larvas, así como para la salud general de la colonia.
+          </p>
+          <ul>
+            <li>
+              <strong>Polen:</strong> Fuente principal de proteínas; se necesita
+              un mínimo de **15-20%** de proteínas en la dieta.
+            </li>
+            <li>
+              <strong>Suplementos de Proteínas:</strong> Se pueden proporcionar
+              tortas de polen o sustitutos de polen en invierno.
+            </li>
+          </ul>
+
+          <h3>3. Lípidos</h3>
+          <p>
+            Los lípidos son importantes para el almacenamiento de energía y la
+            salud celular de las abejas.
+          </p>
+          <ul>
+            <li>
+              <strong>Fuentes de Lípidos:</strong> Presentes en el polen y otros
+              suplementos. Son esenciales para el desarrollo de larvas.
+            </li>
+          </ul>
+
+          <h3>4. Vitaminas y Minerales</h3>
+          <p>
+            Las vitaminas y minerales son necesarios para el crecimiento y el
+            metabolismo adecuado de las abejas.
+          </p>
+          <ul>
+            <li>
+              <strong>Vitaminas:</strong> La vitamina B y otros complejos
+              vitamínicos son vitales para el desarrollo y la función del
+              sistema inmunológico.
+            </li>
+            <li>
+              <strong>Minerales:</strong> Necesarios en pequeñas cantidades; el
+              calcio, fósforo y magnesio son ejemplos importantes.
+            </li>
+          </ul>
+
+          <h3>5. Agua</h3>
+          <p>
+            El agua es esencial para la digestión, la regulación de la
+            temperatura y la preparación del jarabe de azúcar.
+          </p>
+          <ul>
+            <li>
+              <strong>Disponibilidad:</strong> Las abejas necesitan acceso
+              constante a agua limpia, especialmente en climas cálidos.
+            </li>
+          </ul>
+
+          <p>
+            Una nutrición adecuada es fundamental para la salud de la colonia y
+            su capacidad de producir miel. Deficiencias nutricionales pueden
+            llevar a menor producción de miel y a un aumento en enfermedades.
+          </p>
+
+          <h1 id="parametros-productivos">Parámetros Productivos</h1>
+          <p>
+            Los parámetros productivos son indicadores clave del rendimiento de
+            las colmenas. Estos pueden incluir:
+          </p>
+
+          <h2><strong>1. Producción de Miel</strong></h2>
+          <ul>
+            <li>
+              La producción mínima debe ser de **20-30 kg** por temporada en
+              condiciones óptimas.
+            </li>
+            <li>
+              Una colmena saludable puede generar entre **50-120 kg** de miel,
+              dependiendo del manejo.
+            </li>
+          </ul>
+
+          <h2><strong>2. Producción de Cera</strong></h2>
+          <ul>
+            <li>
+              Una colonia saludable puede producir de **1 a 2 kg** de cera por
+              temporada.
+            </li>
+            <li>
+              La cera es fundamental para el almacenamiento de miel y cría, y su
+              calidad debe ser monitoreada.
+            </li>
+          </ul>
+
+          <h2><strong>3. Rendimiento de Cría</strong></h2>
+          <ul>
+            <li>
+              La proporción de crías sanas debe ser al menos del **80-90%**.
+            </li>
+            <li>Esto indica un ambiente adecuado y una reina saludable.</li>
+          </ul>
+
+          <h2><strong>4. Supervivencia de Colonias</strong></h2>
+          <ul>
+            <li>
+              Una tasa de supervivencia del **80-90%** en un apiario bien
+              manejado es ideal.
+            </li>
+            <li>
+              Las prácticas de manejo deben minimizar el estrés y enfermedades.
+            </li>
+          </ul>
+
+          <h2><strong>5. Calidad de la Miel</strong></h2>
+          <ul>
+            <li>
+              La miel debe tener un contenido de humedad inferior al **18%** y
+              un pH entre **3.2 y 4.5**.
+            </li>
+            <li>
+              Realizar análisis para garantizar pureza y calidad, especialmente
+              si se planea comercializar.
+            </li>
+          </ul>
+
+          <h1 id="parametros-reproductivos">Parámetros Reproductivos</h1>
+          <p>
+            Los parámetros reproductivos se refieren a la capacidad de la
+            colonia para reproducirse y crecer. Estos incluyen:
+          </p>
+
+          <h2><strong>1. Producción de Huevos</strong></h2>
+          <ul>
+            <li>
+              La reina debe poner un promedio de **1,000 a 2,000 huevos
+              diarios** en temporada alta.
+            </li>
+            <li>
+              Una baja producción puede indicar problemas en la reina o
+              condiciones adversas.
+            </li>
+          </ul>
+
+          <h2><strong>2. Crecimiento de la Colonia</strong></h2>
+          <ul>
+            <li>
+              Se espera un aumento del **20-30%** en la población durante la
+              temporada de floración.
+            </li>
+            <li>
+              El crecimiento saludable depende de la disponibilidad de recursos
+              y gestión adecuada.
+            </li>
+          </ul>
+
+          <h2><strong>3. Desarrollo de Larvas</strong></h2>
+          <ul>
+            <li>
+              Al menos el **90%** de las larvas deben sobrevivir hasta la etapa
+              adulta.
+            </li>
+            <li>
+              Monitorear el desarrollo ayuda a identificar problemas en la salud
+              de la colonia.
+            </li>
+          </ul>
+
+          <h2><strong>4. Enjambrazón</strong></h2>
+          <ul>
+            <li>
+              Idealmente, no más del **15-20%** de las colonias deben enjambrar
+              en un año.
+            </li>
+            <li>
+              Una alta tasa puede indicar una reina de baja calidad o
+              condiciones inadecuadas.
+            </li>
+          </ul>
+
+          <h2><strong>5. Salud de la Reina</strong></h2>
+          <ul>
+            <li>
+              La reina debe ser revisada cada **6-12 meses**; se debe considerar
+              su reemplazo si su producción de huevos disminuye.
+            </li>
+            <li>
+              Las reinas jóvenes y saludables son esenciales para la estabilidad
+              y productividad de la colonia.
+            </li>
+          </ul>
+
+          <p>
+            Estos parámetros son fundamentales para evaluar la efectividad de
+            las prácticas de manejo y la salud general de la colonia,
+            garantizando así una producción sostenida de miel.
+          </p>
+        </div>
+      </div>
+
+      <div id="seccionA" class="seccion">
+        <div class="texto">
+          <h1>Registro de Observaciones Finca IEAU</h1>
+          <p></p>
+          <!-- Contenedor para Handsontable -->
+          <div id="tabla-handsontable"></div>
+        </div>
+      </div>
+
+      <div id="seccionB" class="seccion">
+        <div class="texto">
+          <h1>Registro de Producción de Miel Finca IEAU</h1>
+          <p></p>
+          <div id="tabla-handsontable-b"></div>
+          <!-- Contenedor para la tabla en la sección B -->
+        </div>
+      </div>
+
+      <div id="seccionC" class="seccion">
+        <div class="texto">
+          <h1>Registro Climatológico Finca IEAU</h1>
+          <p></p>
+          <div id="tabla-handsontable-c"></div>
+          <!-- Contenedor para la tabla en la sección C -->
+        </div>
+      </div>
+
+      <div id="seccionD" class="seccion">
+        <div class="texto">
+          <h1>Registro de Manejo y Tratamiento Finca IEAU </h1>
+          <p></p>
+          <div id="tabla-handsontable-d"></div>
+          <!-- Contenedor para la tabla en la sección D -->
+        </div>
+      </div>
+
+      <div id="seccionE" class="seccion">
+        <div class="texto">
+          <h1>E</h1>
+          <p>e</p>
+        </div>
+      </div>
+
+      <div id="seccionF" class="seccion">
+        <div class="texto">
+          <h1>Registro de Observaciones Finca SENA</h1>
+          <p></p>
+          <div id="tabla-handsontable-2"></div>
+          <!-- Contenedor para la segunda tabla -->
+        </div>
+      </div>
+
+      <div id="seccionG" class="seccion">
+        <div class="texto">
+          <h1>Registro de Producción de Miel Finca SENA</h1>
+          <p></p>
+          <div id="tabla-handsontable-g"></div>
+          <!-- Contenedor para la tabla en la sección G -->
+        </div>
+      </div>
+
+      <div id="seccionH" class="seccion">
+        <div class="texto">
+          <h1>Registro Climatológico Finca SENA</h1>
+          <p></p>
+          <div id="tabla-handsontable-h"></div>
+          <!-- Contenedor para la tabla en la sección H -->
+        </div>
+      </div>
+
+      <div id="seccionI" class="seccion">
+        <div class="texto">
+          <h1>Registro de Manejo y Tratamiento Finca SENA</h1>
+          <p></p>
+          <div id="tabla-handsontable-i"></div>
+          <!-- Contenedor para la tabla en la sección I -->
+        </div>
+      </div>
+
+      <div id="seccionJ" class="seccion">
+        <div class="texto">
+          <h1>J</h1>
+          <p>j</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="barra-inferior">
+      <button class="boton boton1" onclick="mostrarSeccion('inicio')">
+        <img
+          src="inicio.png"
+          alt="Ícono"
+          style="width: 20 px; height: 20px; vertical-align: middle"
+        />
+      </button>
+
+      <button class="boton boton2" onclick="mostrarSeccion('apiario')">
+        <img
+          src="colmena.png"
+          alt="Ícono"
+          style="width: 20px; height: 20px; vertical-align: middle"
+        />
+      </button>
+
+      <button class="boton boton3" onclick="mostrarSeccion('seccion3')">
+        <img
+          src="salud.png"
+          alt="Ícono"
+          style="width: 20px; height: 20px; vertical-align: middle"
+        />
+      </button>
+
+      <button class="boton boton4" onclick="mostrarSeccion('seccion4')">
+        <img
+          src="seguridad.png"
+          alt="Ícono"
+          style="width: 20px; height: 20px; vertical-align: middle"
+        />
+      </button>
+      <button class="boton boton5" onclick="mostrarSeccion('seccion5')">
+        <img
+          src="nutrición.png"
+          alt="Ícono"
+          style="width: 20px; height: 20px; vertical-align: middle"
+        />
+      </button>
+    </div>
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/handsontable@12.1.0/dist/handsontable.full.min.js"></script>
+  </body>
+</html>
